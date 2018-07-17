@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<button id="shuffle">shuffle</button>
+<div class="button-group filter-button-group">
+  <div class="btn">
+    <input name="male" value=".male" id="male" type="checkbox">
+    <label for="male">male</label>
+  </div>
+  <div class="btn">
+    <input name="female" value=".female" id="female" type="checkbox">
+    <label for="female">female</label>
+  </div>
+  <div class="btn">
+    <input name="de" value=".de" id="de" type="checkbox">
+    <label for="de">de</label>
+  </div>
+  <div class="btn">
+    <input name="it" value=".it" id="it" type="checkbox">
+    <label for="it">it</label>
+  </div>
+  <div class="btn">
+    <input name="en" value=".en" id="en" type="checkbox">
+    <label for="en">en</label>
+  </div>
+  <div class="btn">
+    <input name="has-website" value=".has-website" id="has-website" type="checkbox">
+    <label for="has-website">has-website</label>
+  </div>
+</div>
+<input class="quicksearch" placeholder="Search" type="text">
+<div class="blog_wrapper isotope_wrapper myclass">
+  <div class="posts_group lm_wrapper masonry tiles col-6 isotope" style="position: relative; height: 10615.1px;">
+    <div class="post-item isotope-item  de it male has-website" style="position: absolute; left: 0px; top: 0px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">gruber martin</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip">Lorem ipsum […]</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="post-item isotope-item  de it female" style="position: absolute; left: 179px; top: 0px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">maier erna</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip">dolor sit […]</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="post-item isotope-item  de it male" style="position: absolute; left: 359px; top: 0px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">hofer martin</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip">No text […]</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="post-item isotope-item  de it male" style="position: absolute; left: 539px; top: 0px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">zwerger josef</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip">Hello […]</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="post-item isotope-item it female" style="position: absolute; left: 719px; top: 0px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">piccolo susi</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip">bla bla […]</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="post-item isotope-item de it female" style="position: absolute; left: 899px; top: 0px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">maier martina</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip"> […]</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="post-item isotope-item male en" style="position: absolute; left: 0px; top: 10435px;">
+      <div class="post-photo-wrapper scale-with-grid"> </div>
+      <div class="post-desc-wrapper">
+        <div class="post-desc">
+          <div class="post-head"></div>
+          <div class="post-title">
+            <h2 class="entry-title" itemprop="headline"><a href="#">trump john</a></h2>
+          </div>
+          <div class="post-excerpt"><span class="excerpt-hellip"> […]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+<script type="text/javascript">
+	
+  var grid=$('.isotope');
+  var filter=$('.filter-button-group input');
+  var suche=$('.quicksearch');
+  var qsRegex;
+  var buttonFilter;
+  
+  grid.isotope({
+    itemSelector: '.isotope-item',
+	  filter: function() {
+		 // console.log(searchResult);
+		  var searchResult = qsRegex ? $(this).text().match( qsRegex ) : true;
+		  var buttonResult = buttonFilter ? $(this).is( buttonFilter ) : true;
+		  console.log(buttonFilter);
+		    console.log($(this).is( buttonFilter ));
+		  return searchResult && buttonResult;
+  	}
+  });
+
+
+  
+  // use value of search field to filter
+  var quicksearch = suche.keyup( debounce( function() {
+	  qsRegex = new RegExp( quicksearch.val(), 'gi' );
+	  grid.isotope();
+  }, 200 ) );
+  
+  
+  // debounce so filtering doesn't happen every millisecond
+	function debounce( fn, threshold ) {
+	  var timeout;
+	  return function debounced() {
+		if ( timeout ) {
+		  clearTimeout( timeout );
+		}
+		function delayed() {
+		  fn();
+		  timeout = null;
+		}
+		timeout = setTimeout( delayed, threshold || 100 );
+	  };
+	}
+
+  $('#shuffle').click(function(){
+    grid.isotope('shuffle');
+  });
+
+
+
+  filter.change(function(){
+    var filters = [];
+
+    filter.filter(':checked').each(function(){
+      filters.push( this.value );
+    });
+     //filters = filters.join(', '); 	//OR
+	filters = filters.join(''); 		//AND
+	buttonFilter = filters;
+	console.log(filters);
+    grid.isotope();
+  });
+
+   
+</script>
+</html>

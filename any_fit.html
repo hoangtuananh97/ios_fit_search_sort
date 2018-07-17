@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* { box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+}
+
+/* ---- button ---- */
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #28F;
+}
+
+.button.is-checked {
+  color: white;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+}
+
+.button:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+/* ---- button-group ---- */
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+}
+
+.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+
+/* ---- isotope ---- */
+
+.grid {
+  background: #EEE;
+  max-width: 1200px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ui group */
+
+.ui-group {
+  display: inline-block;
+}
+
+.ui-group h3 {
+  display: inline-block;
+  margin-right: 0.2em;
+  font-size: 16px;
+}
+
+.ui-group .button-group {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* color-shape */
+
+.color-shape {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  float: left;
+}
+ 
+.color-shape.round {
+  border-radius: 35px;
+}
+ 
+.color-shape.big.round {
+  border-radius: 75px;
+}
+ 
+.color-shape.red { background: red; }
+.color-shape.blue { background: blue; }
+.color-shape.yellow { background: yellow; }
+ 
+.color-shape.wide, .color-shape.big { width: 150px; }
+.color-shape.tall, .color-shape.big { height: 150px; }
+	</style>
+</head>
+<body>
+	   <link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<h1>Isotope - combination filters</h1>
+
+<div class="filters">
+
+  <div class="ui-group">
+    <h3>Color</h3>
+   <!--  <div class="button-group js-radio-button-group" data-filter-group="color">
+    	<ul>
+    		<li><button class="button is-checked" data-filter="">any</button></li>
+			<li><button class="button" data-filter=".red">red</button></li>
+			<li> <button class="button" data-filter=".blue">blue</button></li>
+			<li> <button class="button" data-filter=".yellow">yellow</button></li>
+    	</ul>
+
+    </div> -->
+  <div class="thuonghieu">
+                     <button class=" collapsible activeli">Thuong hieu</button>
+                     <ul class="list-group content button-group js-radio-button-group" data-filter-group="color"" style="max-height: 100%">
+                        <li class="list-group-item">
+                          <button class=" button is-checked" data-filter="">any</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".red">red</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".blue">blue</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".yellow">yellow</button>
+                           <span class="badge">12</span>
+                        </li>
+                       
+                     </ul>
+                  </div>
+  </div>
+
+  <div class="ui-group">
+    <h3>Size</h3>
+    <div class="button-group js-radio-button-group" data-filter-group="size">
+      <button class="button is-checked" data-filter="">any</button>
+      <button class="button" data-filter=".small">small</button>
+      <button class="button" data-filter=".wide">wide</button>
+      <button class="button" data-filter=".big">big</button>
+      <button class="button" data-filter=".tall">tall</button>
+    </div>
+  </div>
+
+  <div class="ui-group">
+    <h3>Shape</h3>
+    <div class="button-group js-radio-button-group" data-filter-group="shape">
+      <button class="button is-checked" data-filter="">any</button>
+      <button class="button" data-filter=".round">round</button>
+      <button class="button" data-filter=".square">square</button>
+    </div>
+  </div>
+
+</div>
+
+<p><input type="text" class="quicksearch" placeholder="Search" /></p>
+
+<div class="grid">
+     <div class="color-shape small round blue">
+                           	
+   	 <figure>
+  	<img src="assets/images/p1.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">Mercury</h3>
+	    <p class="symbol">Hg</p>
+	    <p class="number">80</p>
+	    <p class="weight">200.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+                    
+  <div class=" color-shape small round red">
+                           	
+   	 <figure>
+  	<img src="assets/images/p2.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">Mercury</h3>
+	    <p class="symbol">Hg</p>
+	    <p class="number">80</p>
+	    <p class="weight">200.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+  <div class="color-shape small round yellow">
+  	<h3 class="name">Bismuth</h3>
+    <p class="symbol">Bi</p>
+    <p class="number">83</p>
+    <p class="weight">208.980</p>
+  </div>
+  <div class="color-shape small square red">
+  	 <h3 class="name">Lead</h3>
+    <p class="symbol">Pb</p>
+    <p class="number">82</p>
+    <p class="weight">207.2</p>
+  </div>
+  <div class="color-shape small square blue">
+  	<h3 class="name">Gold</h3>
+    <p class="symbol">Au</p>
+    <p class="number">79</p>
+    <p class="weight">196.967</p>
+  </div>
+  <div class="color-shape small square yellow">
+  	 <h3 class="name">Sodium</h3>
+    <p class="symbol">Na</p>
+    <p class="number">11</p>
+    <p class="weight">22.99</p>
+  </div>
+  <div class="color-shape wide round red"></div>
+  <div class="color-shape wide round blue"></div>
+  <div class="color-shape wide round yellow"></div>
+  <div class="color-shape wide square red"></div>
+  <div class="color-shape wide square blue"></div>
+  <div class="color-shape wide square yellow"></div>
+  <div class="color-shape big round red"></div>
+  <div class="color-shape big round blue"></div>
+  <div class="color-shape big round yellow"></div>
+  <div class="color-shape big square red"></div>
+  <div class="color-shape big square blue"></div>
+  <div class="color-shape big square yellow"></div>
+  <div class="color-shape tall round red"></div>
+  <div class="color-shape tall round blue"></div>
+  <div class="color-shape tall round yellow"></div>
+  <div class="color-shape tall square red"></div>
+  <div class="color-shape tall square blue"></div>
+  <div class="color-shape tall square yellow"></div>
+</div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+// external js: isotope.pkgd.js
+var qsRegex;
+ var filterValue;
+ var filters = {};
+// init Isotope
+var $grid = $('.grid').isotope({
+  itemSelector: '.color-shape',
+  
+});
+	$grid.imagesLoaded().progress( function() {
+		$grid.isotope('layout');
+      	});
+// store filter for each group
+
+
+$('.filters').on( 'click', '.button', function( event ) {
+  var $button = $( event.currentTarget );
+  // get group key
+  var $buttonGroup = $button.parents('.button-group');
+  var filterGroup = $buttonGroup.attr('data-filter-group');
+  // set filter for group
+  filters[ filterGroup ] = $button.attr('data-filter');
+  // combine filters
+   filterValue = concatValues( filters );
+  
+  // set filter for Isotope
+  $grid.isotope({ filter: function() {
+		 // console.log(searchResult);
+		  var searchResult = qsRegex ? $(this).text().match( qsRegex ) : true;
+		  var buttonResult = filterValue ? $(this).is( filterValue ) : true;
+		  return searchResult && buttonResult;
+  			}
+  	 });
+});
+
+// change is-checked class on buttons
+$('.button-group').each( function( i, buttonGroup ) {
+  var $buttonGroup = $( buttonGroup );
+  $buttonGroup.on( 'click', 'button', function( event ) {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    var $button = $( event.currentTarget );
+    $button.addClass('is-checked');
+  });
+});
+  
+// flatten object by concatting values
+function concatValues( obj ) {
+  var value = '';
+  for ( var prop in obj ) {
+    value += obj[ prop ];
+  }
+  return value;
+}
+
+///quicksearch
+// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  $grid.isotope();
+}, 200 ) );
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  threshold = threshold || 100;
+  return function debounced() {
+    clearTimeout( timeout );
+    var args = arguments;
+    var _this = this;
+    function delayed() {
+      fn.apply( _this, args );
+    }
+    timeout = setTimeout( delayed, threshold );
+  };
+}
+</script>
+<script type="text/javascript">
+	
+// quick search regex
+var qsRegex;
+
+// init Isotope
+var $grid = $('.grid').isotope({
+  itemSelector: '.element-item',
+  layoutMode: 'masonry',
+  filter: function() {
+    return qsRegex ? $(this).text().match( qsRegex ) : true;
+  }
+});
+
+// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  $grid.isotope();
+}, 200 ) );
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  threshold = threshold || 100;
+  return function debounced() {
+    clearTimeout( timeout );
+    var args = arguments;
+    var _this = this;
+    function delayed() {
+      fn.apply( _this, args );
+    }
+    timeout = setTimeout( delayed, threshold );
+  };
+}
+
+</script>
+</html>

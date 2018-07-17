@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+      <link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+      <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" property="" />
+      <link href="assets/css/style.css" rel='stylesheet' type='text/css' />
+      <link href="assets/css/fontawesome-all.css" rel="stylesheet">
+      <link href="assets/css/simpleLightbox.css" rel='stylesheet' type='text/css' />
+      <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+      <style type="text/css">
+      	
+.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  text-shadow: 0 1px white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #28F;
+}
+
+.button.is-checked {
+  color: white;
+  text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+}
+
+.button:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+/* ---- button-group ---- */
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+}
+
+.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+
+.gird{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+figure{
+	padding: 10px;
+}
+figure img{
+	width: 170px;
+	height: 150px;
+}
+.nhandoi{
+	width: 200px;
+}
+      </style>
+</head>
+<body>
+	<div class="container">
+		 <div class="row search-row">
+        <p><input type="text" class="quicksearch" placeholder="Search" /></p>
+            </div>
+
+        <div class="button-group sort-by-button-group">
+  <button class="button is-checked" data-sort-value="original-order">original order</button>
+  <button class="button" data-sort-value="name">name</button>
+  <button class="button" data-sort-value="symbol">symbol</button>
+  <button class="button" data-sort-value="number">number</button>
+  <button class="button" data-sort-value="weight">weight</button>
+  <button class="button" data-sort-value="category">category</button>
+</div>    
+ 			<div class="row">
+ 				
+               <div class="col-md-3">
+               	<div class="filters">
+               		<div class="ui-group">
+                  <div class="thuonghieu">
+                     <button class=" collapsible activeli">Thuong hieu</button>
+                     <ul class="list-group content button-group js-radio-button-group" data-filter-group="color"" style="max-height: 100%">
+                        <li class="list-group-item">
+                          <button class=" button is-checked" data-filter="">any</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".red">red</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".blue">blue</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".yellow">yellow</button>
+                           <span class="badge">12</span>
+                        </li>
+                       
+                     </ul>
+                  </div>
+              </div>
+              <div class="ui-group">
+                  <div class="thuonghieu">
+                     <button class="collapsible">Muc gia</button>
+                     <ul class="list-group content button-group js-radio-button-group" data-filter-group="size">
+                        <li class="  list-group-item">
+                           <button class="button is-checked" data-filter="">any</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="button" data-filter=".small">small</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".wide">wide</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".big">big</button>
+                           <span class="badge">12</span>
+                        </li>
+                        <li class="list-group-item">
+                           <button class="button" data-filter=".tall">tall</button>
+                           <span class="badge">12</span>
+                        </li>
+                      
+                     </ul>
+                  </div>
+               </div>
+             </div>  
+         </div>
+               <div class="col-md-9">
+               <div class="grid">
+     <div class="color-shape small round blue">
+                           	
+   	 <figure>
+  	<img src="assets/images/p1.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">aaa</h3>
+	    <p class="symbol">bb</p>
+	    <p class="number">80</p>
+	    <p class="weight">200.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+                    
+  <div class="color-shape small round red">
+                           	
+   	 <figure>
+  	<img src="assets/images/p2.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">bb</h3>
+	    <p class="symbol">aa</p>
+	    <p class="number">80</p>
+	    <p class="weight">400.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+<div class="color-shape small round red">
+                           	
+   	 <figure>
+  	<img src="assets/images/p1.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">cc</h3>
+	    <p class="symbol">sdf</p>
+	    <p class="number">123</p>
+	    <p class="weight">256.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+ <div class="color-shape small round red">
+                           	
+   	 <figure>
+  	<img src="assets/images/3.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">ddd</h3>
+	    <p class="symbol">sdfg</p>
+	    <p class="number">34</p>
+	    <p class="weight">260.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+ <div class="color-shape small round red">
+                           	
+   	 <figure>
+  	<img src="assets/images/2.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">eee</h3>
+	    <p class="symbol">yyy</p>
+	    <p class="number">67</p>
+	    <p class="weight">200.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+ <div class="color-shape small round red">
+                           	
+   	 <figure>
+  	<img src="assets/images/p4.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">fff</h3>
+	    <p class="symbol">fgh</p>
+	    <p class="number">89</p>
+	    <p class="weight">2004.59</p>
+
+  	</figcaption>
+  </figure>
+
+   </div>
+     <div class="color-shape wide square blue">
+     	                       	
+   	 <figure>
+  	<img src="assets/images/p4.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">ercury</h3>
+	    <p class="symbol">aaa</p>
+	    <p class="number">80</p>
+	    <p class="weight">200.59</p>
+
+  	</figcaption>
+  </figure>
+
+     </div>
+  <div class="color-shape wide square yellow">
+  	                       	
+   	 <figure>
+  	<img src="assets/images/5.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">kMercury</h3>
+	    <p class="symbol">hdfhh</p>
+	    <p class="number">820</p>
+	    <p class="weight">2040.59</p>
+
+  	</figcaption>
+  </figure>
+
+  </div>
+  <div class="color-shape big round red">
+  		 <figure>
+  	<img src="assets/images/5.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">vMercury</h3>
+	    <p class="symbol">dsf</p>
+	    <p class="number">380</p>
+	    <p class="weight">5200.59</p>
+
+  	</figcaption>
+  </figure>
+  </div>
+  <div class="color-shape big round blue">
+  		 <figure>
+  	<img src="assets/images/5.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">iMercury</h3>
+	    <p class="symbol">hhh</p>
+	    <p class="number">324</p>
+	    <p class="weight">23.59</p>
+
+  	</figcaption>
+  </figure>
+  </div>
+    <div class="color-shape tall square yellow">
+    		 <figure>
+  	<img src="assets/images/5.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">sdaa</h3>
+	    <p class="symbol">nmk</p>
+	    <p class="number">34</p>
+	    <p class="weight">342.59</p>
+
+  	</figcaption>
+  </figure>
+    </div>
+  <div class="color-shape tall round red">
+  		 <figure>
+  	<img src="assets/images/5.jpg" width="100%">
+  	<figcaption>
+  		 <h3 class="name">mercury</h3>
+	    <p class="symbol">hhh</p>
+	    <p class="number">80</p>
+	    <p class="weight">200.59</p>
+
+  	</figcaption>
+  </figure>
+  </div>
+              </div>        
+                  
+                  </div><!-- het divgridView -->
+               </div>
+           </div>
+         
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+   <script type="text/javascript" src="assets/js/imagesloaded.pkgd.min.js"></script>
+ <script type="text/javascript">
+// external js: isotope.pkgd.js
+var qsRegex;
+ var filterValue;
+ var filters = {};
+// init Isotope
+var $grid = $('.grid').isotope({
+  itemSelector: '.color-shape',
+   getSortData: {
+    name: '.name',
+    symbol: '.symbol',
+    number: '.number parseInt',
+    weight: function( itemElem ) {
+      var weight = $( itemElem ).find('.weight').text();
+      return parseFloat( weight.replace( /[\(\)]/g, '') );
+    }
+  }
+  
+});
+	$grid.imagesLoaded().progress( function() {
+		$grid.isotope('layout');
+      	});
+// store filter for each group
+
+
+$('.filters').on( 'click', '.button', function( event ) {
+  var $button = $( event.currentTarget );
+  // get group key
+  var $buttonGroup = $button.parents('.button-group');
+  var filterGroup = $buttonGroup.attr('data-filter-group');
+  // set filter for group
+  filters[ filterGroup ] = $button.attr('data-filter');
+  // combine filters
+   filterValue = concatValues( filters );
+  
+
+  // set filter for Isotope
+  $grid.isotope({ filter: function() {
+		 // console.log(searchResult);
+		  var searchResult = qsRegex ? $(this).text().match( qsRegex ) : true;
+		  var buttonResult = filterValue ? $(this).is( filterValue ) : true;
+		  return searchResult && buttonResult;
+  			}
+  	 });
+});
+
+
+// change is-checked class on buttons
+$('.button-group').each( function( i, buttonGroup ) {
+  var $buttonGroup = $( buttonGroup );
+  $buttonGroup.on( 'click', 'button', function( event ) {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    var $button = $( event.currentTarget );
+    $button.addClass('is-checked');
+  });
+});
+  
+// flatten object by concatting values
+function concatValues( obj ) {
+  var value = '';
+  for ( var prop in obj ) {
+    value += obj[ prop ];
+  }
+  return value;
+}
+
+
+// bind sort button click
+$('.sort-by-button-group').on( 'click', 'button', function() {
+  var sortValue = $(this).attr('data-sort-value');
+  $grid.isotope({ sortBy: sortValue });
+});
+
+
+// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  $grid.isotope();
+}, 200 ) );
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  threshold = threshold || 100;
+  return function debounced() {
+    clearTimeout( timeout );
+    var args = arguments;
+    var _this = this;
+    function delayed() {
+      fn.apply( _this, args );
+    }
+    timeout = setTimeout( delayed, threshold );
+  };
+}
+</script>
+<script type="text/javascript">
+	
+// quick search regex
+var qsRegex;
+
+// init Isotope
+var $grid = $('.grid').isotope({
+  itemSelector: '.element-item',
+  layoutMode: 'masonry',
+  filter: function() {
+    return qsRegex ? $(this).text().match( qsRegex ) : true;
+  }
+});
+
+// use value of search field to filter
+var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+  $grid.isotope();
+}, 200 ) );
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  threshold = threshold || 100;
+  return function debounced() {
+    clearTimeout( timeout );
+    var args = arguments;
+    var _this = this;
+    function delayed() {
+      fn.apply( _this, args );
+    }
+    timeout = setTimeout( delayed, threshold );
+  };
+}
+
+</script>
+ <script type="text/javascript">
+         var coll = document.getElementsByClassName("collapsible");
+         var i;
+         
+         for (i = 0; i < coll.length; i++) {
+           coll[i].addEventListener("click", function() {
+             this.classList.toggle("activeli");
+             var content = this.nextElementSibling;
+             if (content.style.maxHeight){
+               content.style.maxHeight = null;
+             } else {
+               content.style.maxHeight = content.scrollHeight + "px";
+             } 
+           });
+         }
+             
+</script>
+<script type="text/javascript">
+         $(document).ready(function(){
+         	$('.thuonghieu li button').click(function(){
+         		$('.thuonghieu li button').removeClass('active');
+         		$(this).addClass('active');
+         	})
+         })
+</script>
+
+</html>

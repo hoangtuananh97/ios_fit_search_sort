@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.portfolio-filter {}
+ul.filter {color: #2e2e2e}
+ul.filter li{display: inline-block;font-size: 16px;font-weight: 400;padding-right: 25px;padding-left: 25px;position: relative;cursor: pointer}
+ul.filter li.active{color: #549DC5}
+ul.filter li:after{content: "/";position: absolute;right: 0;top: 0;color: #B4B4B4}
+ul.filter li:last-child{}
+ul.filter li:last-child:after{display: none}
+.all-portfolios {margin-top: 20px;margin-left: -10px}
+.single-portfolio {float: left;
+margin-bottom: 10px;
+margin-left: 10px;
+width: 277px;}
+	</style>
+</head>
+<body>
+<div class="portfolio-filter text-uppercase text-center">
+    <ul class="filter">
+        <li class="active" data-filter="*">All</li>
+        <li data-filter=".web-design">Web Design</li>
+        <li data-filter=".graphic">Graphic</li>
+        <li data-filter=".photography">Photography</li>
+        <li data-filter=".motion-video">Motion video</li>
+    </ul>
+</div>
+
+<div class="all-portfolios">
+    <div class="single-portfolio web-design">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio graphic">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio photography motion-video">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio web-design">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio graphic web-design">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio web-design">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio graphic">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio motion-video">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio motion-video">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio graphic photography">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio motion-video">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+    <div class="single-portfolio photography">
+        <img class="img-responsive" src="http://placehold.it/285x220" alt="">
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+ <script type="text/javascript">
+ 	$(function(){
+    $(".all-portfolios").isotope({
+        itemSelector: '.single-portfolio',
+        layoutMode: 'fitRows',
+    });
+    
+    $('ul.filter li').click(function(){ 
+        
+      $("ul.filter li").removeClass("active");
+      $(this).addClass("active");        
+
+        var selector = $(this).attr('data-filter'); 
+        $(".all-portfolios").isotope({ 
+            filter: selector, 
+            animationOptions: { 
+                duration: 750, 
+                easing: 'linear', 
+                queue: false, 
+            } 
+        }); 
+      return false; 
+    }); 
+    
+});
+ </script>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<style>
+*{
+	padding: 0;
+	margin: 0;
+}
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+
+   opacity: 0;
+transform: scale(2);
+   transition: 0.4s;
+   visibility: hidden;
+   display: none;
+
+}
+.filterDiv img{
+	width: 100%;
+	height: 100%;
+}
+.show {
+  
+  transition: 0.4s;
+   opacity: 1;
+   transform: scale(1);
+   visibility: visible;
+   display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+
+   width: 100%;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+.noidung{
+	display: flex;
+	flex-wrap: wrap;
+}
+.noidung .khoianh{
+	width: 33.3333%;
+	box-sizing: border-box;
+	padding: 5px;
+}
+.khoianh img{
+
+}
+figure{
+	margin: 10px;
+}
+</style>
+<body>
+
+<h2>Filter DIV Elements</h2>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<button onclick="sortListDir()">Sort</button>
+<div class="container">
+  <div class="filterDiv cars" data-id="cars">
+  		<img src="assets/images/1.jpg">BMW
+  </div>
+  <div class="filterDiv colors fruits">
+  	<img src="assets/images/2.jpg">O
+  </div>
+  <div class="filterDiv cars">Volvo</div>
+  <div class="filterDiv colors">Red</div>
+  <div class="filterDiv cars animals">Mustang</div>
+  <div class="filterDiv colors">Blue</div>
+  <div class="filterDiv animals">Cat</div>
+  <div class="filterDiv animals">Dog</div>
+  <div class="filterDiv fruits">Melon</div>
+  <div class="filterDiv fruits animals">Kiwi</div>
+  <div class="filterDiv fruits">Banana</div>
+  <div class="filterDiv fruits">Lemon</div>
+  <div class="filterDiv animals">Cow</div>
+</div>
+<div class="button-group" data-filter-group="color">
+  <button data-filter="">any</button>
+  <button data-filter=".red">red</button>
+  <button data-filter=".blue">blue</button>
+  <button data-filter=".yellow">yellow</button>
+</div>
+<section>
+		<div class="noidung">
+			<div class="khoianh red">
+				<figure>
+					<img src="assets/images/p1.jpg">
+					<figcaption>
+						<span>aaaa</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+				<div class="khoianh red">
+				<figure>
+					<img src="assets/images/1.jpg">
+					<figcaption>
+						<span>cc</span>
+					</figcaption>
+				</figure>
+				
+			</div> 
+			<div class="khoianh blue">
+				<figure>
+					<img src="assets/images/p1.jpg">
+					<figcaption>
+						<span>bb</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			
+		
+			
+			<div class="khoianh blue">
+				<figure>
+					<img src="assets/images/p2.jpg">
+					<figcaption>
+						<span>dd</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			<div class="khoianh yellow">
+				<figure>
+					<img src="assets/images/team2.jpg">
+					<figcaption>
+						<span>ffff</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			<div class="khoianh yellow">
+				<figure>
+					<img src="assets/images/p3.jpg">
+					<figcaption>
+						<span>eee</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			<div class="khoianh red">
+				<figure>
+					<img src="assets/images/3.jpg">
+					<figcaption>
+						<span>eee</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			
+			<div class="khoianh">
+				<figure>
+					<img src="assets/images/1.jpg">
+					<figcaption>
+						<span>ffff</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+
+			<div class="khoianh">
+				<figure>
+					<img src="assets/images/team1.jpg">
+					<figcaption>
+						<span>ffff</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			<div class="khoianh">
+				<figure>
+					<img src="assets/images/p5.jpg">
+					<figcaption>
+						<span>ffff</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+			
+			<div class="khoianh">
+				<figure>
+					<img src="assets/images/5.jpg">
+					<figcaption>
+						<span>ffff</span>
+					</figcaption>
+				</figure>
+				
+			</div>
+		</div>
+	</section>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+   <script type="text/javascript" src="assets/js/imagesloaded.pkgd.min.js"></script>
+      <script type="text/javascript">
+      	$(function(){
+      	$hieuung= $('.noidung').isotope({
+		  // options
+		  itemSelector: '.khoianh',
+		  layoutMode: 'masonry'
+		});
+		$hieuung.imagesLoaded().progress( function() {
+		$hieuung.isotope('layout');
+      	});
+
+var filters = {};
+
+$hieuung.on( 'click', '.data-filter', function() {
+  var $this = $(this);
+  // get group key
+  var $buttonGroup = $this.parents('.button-group');
+  var filterGroup = $buttonGroup.attr('data-filter-group');
+  // set filter for group
+  filters[ filterGroup ] = $this.attr('data-filter');
+  // combine filters
+  var filterValue = concatValues( filters );
+ $hieuung.isotope({ filter: filterValue });
+});
+
+// flatten object by concatting values
+function concatValues( obj ) {
+  var value = '';
+  for ( var prop in obj ) {
+    value += obj[ prop ];
+  }
+  return value;
+}
+
+      });
+      </script>
+<script>
+filterSelection("all")
+
+
+function myFunction() {
+	console.log(filterSelection('cars'));
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+
+     if (filter == "") filter = "";
+  	x = document.getElementsByClassName("filterDiv");
+    for (i = 0; i < x.length; i++) {
+ 		w3RemoveClass(x[i], "show");
+        if (x[i].className.toUpperCase().indexOf(filter) > -1) {
+        	console.log(x[i])
+           w3AddClass(x[i], "show");
+       }
+    }
+}
+
+function sortListDir() {
+  var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
+  list = document.getElementById("id01");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  //Make a loop that will continue until no switching has been done:
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    b = document.getElementsByClassName("filterDiv");
+    //Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*check if the next item should switch place with the current item,
+      based on the sorting direction (asc or desc):*/
+      if (dir == "asc") {
+        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+          /*if next item is alphabetically lower than current item,
+          mark as a switch and break the loop:*/
+          shouldSwitch = true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
+          /*if next item is alphabetically higher than current item,
+          mark as a switch and break the loop:*/
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+      //Each time a switch is done, increase switchcount by 1:
+      switchcount ++;
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
