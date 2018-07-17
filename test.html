@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover,.btn-default:hover {
   background-color: #8CF;
   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
   color: #222;
@@ -78,6 +78,9 @@ figure img{
 .nhandoi{
 	width: 200px;
 }
+.btn-default{
+  border: 1px solid #fff;
+}
       </style>
 </head>
 <body>
@@ -90,11 +93,11 @@ figure img{
 
 
   <div class="btn-group sort-button-group pull-right"> 
-        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="original-order" type="button">Sort <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
-        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="name" type="button">Name <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
-        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="symbol" type="button">symbol  <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button>
-        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="number" type="button">number <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
-        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="weight" type="button">weight <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
+        <button class="button btn-default is-checked" data-sort-direction="asc" data-sort-value="original-order" type="button">Sort <span aria-hidden="true" class="fa fa-button-up"></span></button> 
+        <button class="button btn-default" data-sort-direction="asc" data-sort-value="name" type="button">Name <span aria-hidden="true" class="fa fa-chevron-up"></span></button> 
+        <button class="button btn-default" data-sort-direction="asc" data-sort-value="symbol" type="button">symbol  <span aria-hidden="true" class="fa fa-chevron-up"></span></button>
+        <button class="button btn-default" data-sort-direction="asc" data-sort-value="number" type="button">number <span aria-hidden="true" class="fa fa-chevron-up"></span></button> 
+        <button class="button btn-default" data-sort-direction="asc" data-sort-value="weight" type="button">weight <span aria-hidden="true" class="fa fa-chevron-up"></span></button> 
       </div><!-- /.btn-group -->
    
  			<div class="row">
@@ -325,7 +328,9 @@ figure img{
            </div>
          
 </body>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+ <script type="text/javascript" src="assets/js/bootstrap.js"></script>
  <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
    <script type="text/javascript" src="assets/js/imagesloaded.pkgd.min.js"></script>
  <script type="text/javascript">
@@ -396,6 +401,7 @@ function concatValues( obj ) {
 }
 
 
+
 // bind sort button click
 
   // bind sort button click
@@ -416,10 +422,13 @@ function concatValues( obj ) {
 
     $(this).attr('data-sort-direction', newDirection);
 
-    var span = $(this).find('.glyphicon');
-    span.toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+    var span = $(this).find('.fa');
+    span.toggleClass('fa-chevron-up fa-chevron-down');
 
   });
+
+
+
 
 // use value of search field to filter
 var $quicksearch = $('.quicksearch').keyup( debounce( function() {
