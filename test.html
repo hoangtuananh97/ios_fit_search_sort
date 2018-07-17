@@ -86,14 +86,17 @@ figure img{
         <p><input type="text" class="quicksearch" placeholder="Search" /></p>
             </div>
 
-        <div class="button-group sort-by-button-group">
-  <button class="button is-checked" data-sort-value="original-order">original order</button>
-  <button class="button" data-sort-value="name">name</button>
-  <button class="button" data-sort-value="symbol">symbol</button>
-  <button class="button" data-sort-value="number">number</button>
-  <button class="button" data-sort-value="weight">weight</button>
-  <button class="button" data-sort-value="category">category</button>
-</div>    
+
+
+
+  <div class="btn-group sort-button-group pull-right"> 
+        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="original-order" type="button">Sort <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
+        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="name" type="button">Name <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
+        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="symbol" type="button">symbol  <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button>
+        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="number" type="button">number <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
+        <button class="btn btn-default" data-sort-direction="asc" data-sort-value="weight" type="button">weight <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span></button> 
+      </div><!-- /.btn-group -->
+   
  			<div class="row">
  				
                <div class="col-md-3">
@@ -341,6 +344,7 @@ var $grid = $('.grid').isotope({
       var weight = $( itemElem ).find('.weight').text();
       return parseFloat( weight.replace( /[\(\)]/g, '') );
     }
+
   }
   
 });
@@ -393,11 +397,29 @@ function concatValues( obj ) {
 
 
 // bind sort button click
-$('.sort-by-button-group').on( 'click', 'button', function() {
-  var sortValue = $(this).attr('data-sort-value');
-  $grid.isotope({ sortBy: sortValue });
-});
 
+  // bind sort button click
+  $('.sort-button-group').on( 'click', 'button', function() {
+
+    /* Get the element name to sort */
+    var sortValue = $(this).attr('data-sort-value');
+
+    /* Get the sorting direction: asc||desc */
+    var direction = $(this).attr('data-sort-direction');
+
+    /* convert it to a boolean */
+    var isAscending = (direction == 'asc');
+    var newDirection = (isAscending) ? 'desc' : 'asc';
+
+    /* pass it to isotope */
+    $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+    $(this).attr('data-sort-direction', newDirection);
+
+    var span = $(this).find('.glyphicon');
+    span.toggleClass('glyphicon-chevron-up glyphicon-chevron-down');
+
+  });
 
 // use value of search field to filter
 var $quicksearch = $('.quicksearch').keyup( debounce( function() {
