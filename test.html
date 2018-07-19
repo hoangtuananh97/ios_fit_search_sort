@@ -63,35 +63,187 @@
 .button-group .button:first-child { border-radius:0em 2.5em 0em 2.5em; width: 100px }
 .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
 
-.gird{
-	display: flex;
-	flex-wrap: wrap;
+
+.figure_width{
 	padding: 10px;
+  float: left;
+/*  width: 600px;
+  height: 300px;*/
+
 }
-figure{
-	padding: 10px;
+.img_width{
+ width: 250px;
+height: 250px;
+/*width: 50%;*/
 }
-figure img{
-	width: 170px;
-	height: 150px;
+.grid_figcaption{
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 300px;
 }
-.nhandoi{
-	width: 200px;
+.figure_width figcaption{
+  width: 250px;
+
 }
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+  
+    height: auto;
+
+    cursor: pointer;
+  }
+/*figure.figure_width figcaption::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  content: '';
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  -webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+  transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0); 
+}
+
+figure.figure_width:hover figcaption::before {
+  -webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+  transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}*/
+figure.figure_width .btngiohang{
+  opacity: 0;
+  transform: translateY(500px);
+  transition:0.5s;
+}
+
+/*figure.figure_width img {
+  opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+  transform: scale3d(1,1,1);
+  transition: 0.8s;
+}
+figure.figure_width:hover img {
+  opacity: 0.6;
+  -webkit-transform: scale3d(1,1,1);
+  transform: scale3d(1,0.98,1);
+  transition: 0.8s;
+}*/
+figure.figure_width:hover .btngiohang{
+  opacity: 1;
+  transform: translateY(0px);
+  transition:0.5s;
+}
+figure.none-before figcaption::before{
+  background: none;
+}
+
 .btn-default{
   border: 1px solid #fff;
 }
       </style>
 </head>
 <body>
+        <!--/banner-->
+      <header>
+         <div class="top-bar_sub container-fluid">
+            <div class="row">
+               <div class="col-md-4 top-forms text-left mt-4"  data-aos="fade-up">
+                  <span>Welcome Back!</span>
+                  <span class="mx-lg-4 mx-md-2  mx-1">
+                  <a href="login.html">
+                  <i class="fas fa-lock"></i> Sign In</a>
+                  </span>
+                  <span>
+                  <a href="register.html">
+                  <i class="far fa-user"></i> Register</a>
+                  </span>
+               </div>
+               <div class="col-md-4 logo text-center" data-aos="fade-up">
+                  <a class="navbar-brand" href="index.html">
+                  <i class="fab fa-gitkraken"></i> Baked</a>
+               </div>
+               <div class="col-md-4 log-icons text-right"  data-aos="fade-up">
+                  <ul class="social_list1 mt-4">
+                     <li>
+                        <a href="#" class="facebook1 mx-2">
+                        <i class="fab fa-facebook-f"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" class="twitter2">
+                        <i class="fab fa-twitter"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" class="dribble3 mx-2">
+                        <i class="fab fa-dribbble"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#" class="pin">
+                        <i class="fab fa-pinterest-p"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="banner">
+         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+               <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+               <div class="carousel-item active">
+                  <div class="carousel-caption">
+                     <h3>Phone
+                        <span>Phone</span>
+                     </h3>
+                  </div>
+               </div>
+               <div class="carousel-item item2">
+                  <div class="carousel-caption">
+                     <h3>Iphone
+                        <span>Iphone !</span>
+                     </h3>
+                  </div>
+               </div>
+               <div class="carousel-item item3">
+                  <div class="carousel-caption">
+                     <h3>Asus
+                        <span>Hello</span>
+                     </h3>
+                  </div>
+               </div>
+               <div class="carousel-item item4">
+                  <div class="carousel-caption">
+                     <h3>Nokia
+                        <span>Nokia!</span>
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+         </div>
+      </div>
 	<div class="container">
 		 <div class="row search-row">
         <p><input type="text" class="quicksearch" placeholder="Search" /></p>
-            </div>
-
-
-
-
+    </div>
   <div class="btn-group sort-button-group pull-right"> 
         <button class="button btn-default is-checked" data-sort-direction="asc" data-sort-value="original-order" type="button">Sort <span aria-hidden="true" class="fa fa-button-up"></span></button> 
         <button class="button btn-default" data-sort-direction="asc" data-sort-value="name" type="button">Name <span aria-hidden="true" class="fa fa-chevron-up"></span></button> 
@@ -99,7 +251,9 @@ figure img{
         <button class="button btn-default" data-sort-direction="asc" data-sort-value="number" type="button">number <span aria-hidden="true" class="fa fa-chevron-up"></span></button> 
         <button class="button btn-default" data-sort-direction="asc" data-sort-value="weight" type="button">weight <span aria-hidden="true" class="fa fa-chevron-up"></span></button> 
       </div><!-- /.btn-group -->
-   
+    
+    <button class="btnview" id="btnlistView"><i class="fa fa-bars"></i> List</button> 
+    <button class="btnview activebtn" id="btngirdview"><i class="fa fa-th-large"></i> Grid</button>
  			<div class="row">
  				
                <div class="col-md-3">
@@ -109,7 +263,7 @@ figure img{
                      <button class=" collapsible activeli">Thuong hieu</button>
                      <ul class="list-group content button-group js-radio-button-group" data-filter-group="color"" style="max-height: 100%">
                         <li class="list-group-item">
-                          <button class=" button is-checked" data-filter="">any</button>
+                          <button class=" button is-checked" id="btnall" data-filter="">any</button>
                            <span class="badge">12</span>
                         </li>
                         <li class="list-group-item">
@@ -162,14 +316,14 @@ figure img{
                <div class="grid">
      <div class="color-shape small round blue">
                            	
-   	 <figure>
-  	<img src="assets/images/p1.jpg" width="100%">
-  	<figcaption>
+   	 <figure class="figure_width">
+  	<img src="assets/images/p1.jpg" class="img_width">
+  	<figcaption class="aa">
   		 <h3 class="name">aaa</h3>
 	    <p class="symbol">bb</p>
 	    <p class="number">80</p>
 	    <p class="weight">200.59</p>
-
+      <button class="btn btn-success btngiohang">Them gio hang</button>
   	</figcaption>
   </figure>
 
@@ -177,66 +331,66 @@ figure img{
                     
   <div class="color-shape small round red">
                            	
-   	 <figure>
-  	<img src="assets/images/p2.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/p2.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">bb</h3>
 	    <p class="symbol">aa</p>
 	    <p class="number">80</p>
 	    <p class="weight">400.59</p>
-
+ <button class="btn btn-success btngiohang">Them gio hang</button>
   	</figcaption>
   </figure>
 
    </div>
 <div class="color-shape small round red">
                            	
-   	 <figure>
-  	<img src="assets/images/p1.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/p1.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">cc</h3>
 	    <p class="symbol">sdf</p>
 	    <p class="number">123</p>
 	    <p class="weight">256.59</p>
-
+ <button class="btn btn-success btngiohang">Them gio hang</button>
   	</figcaption>
   </figure>
 
    </div>
  <div class="color-shape small round red">
                            	
-   	 <figure>
-  	<img src="assets/images/3.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/3.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">ddd</h3>
 	    <p class="symbol">sdfg</p>
 	    <p class="number">34</p>
 	    <p class="weight">260.59</p>
-
+ <button class="btn btn-success btngiohang">Them gio hang</button>
   	</figcaption>
   </figure>
 
    </div>
  <div class="color-shape small round red">
                            	
-   	 <figure>
-  	<img src="assets/images/2.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/2.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">eee</h3>
 	    <p class="symbol">yyy</p>
 	    <p class="number">67</p>
 	    <p class="weight">200.59</p>
-
+ <button class="btn btn-success btngiohang">Them gio hang</button>
   	</figcaption>
   </figure>
 
    </div>
  <div class="color-shape small round red">
                            	
-   	 <figure>
-  	<img src="assets/images/p4.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/p4.jpg" class="img_width">
   	<figcaption>
-  		 <h3 class="name">fff</h3>
+  		 <h3 class="name">vMercuryfđgđfgdfdfds</h3>
 	    <p class="symbol">fgh</p>
 	    <p class="number">89</p>
 	    <p class="weight">2004.59</p>
@@ -247,8 +401,8 @@ figure img{
    </div>
      <div class="color-shape wide square blue">
      	                       	
-   	 <figure>
-  	<img src="assets/images/p4.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/p4.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">ercury</h3>
 	    <p class="symbol">aaa</p>
@@ -261,8 +415,8 @@ figure img{
      </div>
   <div class="color-shape wide square yellow">
   	                       	
-   	 <figure>
-  	<img src="assets/images/5.jpg" width="100%">
+   	 <figure class="figure_width">
+  	<img src="assets/images/5.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">kMercury</h3>
 	    <p class="symbol">hdfhh</p>
@@ -274,8 +428,8 @@ figure img{
 
   </div>
   <div class="color-shape big round red">
-  		 <figure>
-  	<img src="assets/images/5.jpg" width="100%">
+  		 <figure class="figure_width">
+  	<img src="assets/images/5.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">vMercury</h3>
 	    <p class="symbol">dsf</p>
@@ -286,8 +440,8 @@ figure img{
   </figure>
   </div>
   <div class="color-shape big round blue">
-  		 <figure>
-  	<img src="assets/images/5.jpg" width="100%">
+  		 <figure class="figure_width">
+  	<img src="assets/images/5.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">iMercury</h3>
 	    <p class="symbol">hhh</p>
@@ -298,8 +452,8 @@ figure img{
   </figure>
   </div>
     <div class="color-shape tall square yellow">
-    		 <figure>
-  	<img src="assets/images/5.jpg" width="100%">
+    		 <figure class="figure_width">
+  	<img src="assets/images/5.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">sdaa</h3>
 	    <p class="symbol">nmk</p>
@@ -310,8 +464,8 @@ figure img{
   </figure>
     </div>
   <div class="color-shape tall round red">
-  		 <figure>
-  	<img src="assets/images/5.jpg" width="100%">
+  		 <figure class="figure_width">
+  	<img src="assets/images/5.jpg" class="img_width">
   	<figcaption>
   		 <h3 class="name">mercury</h3>
 	    <p class="symbol">hhh</p>
